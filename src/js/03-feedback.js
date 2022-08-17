@@ -21,11 +21,13 @@ function onFormSubmit(e) {
     const message = formElements.message.value;
 
     if (formData.email !== "" && formData.message !== "") {
-        const formData = {email, message};
-        console.log(formData);
+        const formDataSubmit = {email, message};
+        console.log(formDataSubmit);
         
         e.currentTarget.reset();
         localStorage.removeItem(STORAGE_KEY);
+        formData.email = "";
+        formData.message = "";
     } else {
         alert("Напишіть Ваше повідомлення");
     }

@@ -12,4 +12,10 @@ function curentTime(data) {
 }
 
 player.on('timeupdate', throttle(curentTime, 1000));
-player.setCurrentTime(localStorageCurentTime);
+
+addEventListener("DOMContentLoaded", getLocalTime);
+function getLocalTime() {
+        if (localStorageCurentTime) {
+              player.setCurrentTime(localStorageCurentTime);  
+        }
+}
